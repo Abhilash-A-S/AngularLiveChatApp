@@ -8,7 +8,7 @@
   5) Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
   6) Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Chat Application work flow.
+## Application work flow.
   1) Run `ng start` for a dev server. Navigate to `http://localhost:4200/`.
   2) A popup window will display for tempoary login. The login details are temporary, on tab close the data will removed ![image](https://user-images.githubusercontent.com/45873495/183449502-87912a48-37bd-49ac-b7d7-5fc339bd825a.png)
   ![image](https://user-images.githubusercontent.com/45873495/183449798-121287b1-80eb-48dc-9c47-5fcc33e20274.png)
