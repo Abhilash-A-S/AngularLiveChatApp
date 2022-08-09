@@ -1,0 +1,29 @@
+<div class="individual-chat-section">
+    <div class="friends-section">
+        <friend-list [friendList]="friendList" (activeFriendChange)="activeFriendChange($event)"></friend-list>
+    </div>
+    <div class="chat-container">
+        <div class="chat-section">
+            <div class="message-conatiner">
+                <div #chatMessageContainer class="chat-message">
+                    <div class="message-section" *ngFor="let message of filteredMessageList()">
+                        <chatboxsection [message]="message" [currentUser]="currentUser" [activeFriend]="activeFriend">
+                        </chatboxsection>
+                    </div>
+                    <div *ngIf="!messageList.length && !showLoader" class="record-empty">
+                        Say hi to friend!!!!
+                    </div>
+                </div>
+                <div class="message-input">
+                    <textarea [(ngModel)]="messageText" (keydown.enter)="sendMessage()"></textarea>
+                    <div class="send-icon">
+                        <img src="../../assets/image/send-icon.svg" (click)="sendMessage()">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="loader">
+        <app-loader *ngIf="showLoader"></app-loader>
+    </div>
+</div>

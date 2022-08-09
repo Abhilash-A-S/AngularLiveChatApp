@@ -1,0 +1,12 @@
+<div class="msg" [ngClass]="messagePosition">
+    <img class="msg-img" [src]="currentImage">
+    <div class="msg-bubble">
+        <div class="msg-info">
+            <div class="msg-info-name">{{messageUserName}}</div>
+            <div class="msg-info-time">{{messageTime(message.createdTime)}}</div>
+        </div>
+        <div class="msg-text">
+            {{message.messageText}}
+        </div>
+    </div>
+</div>

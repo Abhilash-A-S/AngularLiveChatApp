@@ -1,0 +1,32 @@
+<div class="main-head">
+    <div class="user-section">
+        <img class="user-icon" [src]="currentUser?.imageUrl || '../../assets/image/user-placeholder.svg'"
+            [title]="currentUser?.userName">
+        <div class="user-name" [title]="currentUser?.userName">{{currentUser?.userName}}</div>
+    </div>
+    <div class="title-section">
+        INSTANT CHAT </div>
+    <div class="icon-section">
+        <img class="home-icon" src="../../assets/image/icon-home.svg" (click)="navidateHome()">
+        <img class="chat-icon" src="../../assets/image/chat-bubble.svg" (click)="showChatBox()">
+    </div>
+    <div class="badge" *ngIf="getUnreadedMessage()">{{getUnreadedMessage()}}</div>
+    <div class="chat-list" *ngIf="showChatModel">
+        <div class="chat-list-head">
+            <div class="icon"></div>
+            <div class="message">Notifications</div>
+            <div class="close" (click)="showChatModel = false">&#10006;</div>
+        </div>
+        <div class="chat-section" *ngFor="let message of  messageList; let i = index"
+            (click)="navidateFriendPage(message);" [title]="message.userName">
+            <div class="icon"><img [src]="message.imageUrl" alt=""></div>
+            <div class="message">{{message.messageText}}</div>
+            <div class="close" (click)="messageList.splice(i,1)">&#10006;</div>
+        </div>
+        <div class="no-message record-empty" *ngIf="!messageList.length">
+            <div class="icon"></div>
+            <div class="message">No new messages</div>
+            <div class="close"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,127 @@
+.individual-chat-section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .friends-section {
+    width: 100%;
+    height: 100px;
+  }
+
+  .chat-container {
+    width: 100%;
+    height: calc(100% - 100px);
+
+    .chat-section {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .search-section {
+        display: flex;
+        align-items: center;
+        background: #fff;
+        border-top: 1px solid #c6c6c6;
+        border-bottom: 1px solid #c6c6c6;
+
+        .search-icon {
+          border-right: 1px solid #c6c6c6;
+          padding: 8px 8px 0 8px;
+
+          img {
+            width: 25px;
+            height: 25px;
+          }
+        }
+
+        .search-input {
+          position: relative;
+
+          .chat-text {
+            position: absolute;
+            font-size: 18px;
+            padding: 8px;
+          }
+
+          input {
+            width: 85%;
+            border: none;
+            outline: none;
+            padding: 11px;
+            padding-left: 56px;
+          }
+        }
+      }
+    }
+
+    .message-conatiner {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      background-color: #fff;
+
+      .chat-message {
+        flex: 1;
+        overflow-y: auto;
+        padding: 16px 10px;
+        padding-top: 20px;
+
+        .message {
+          padding: 10px 15px;
+          height: 100%;
+        }
+
+        .left {
+          float: left;
+        }
+
+        .right {
+          float: right;
+        }
+      }
+
+      .message-input {
+        width: 95%;
+        margin: 0 auto;
+        display: flex;
+        margin-bottom: 10px;
+
+        textarea {
+          width: 85%;
+          resize: none;
+          margin: 0;
+          padding: 10px;
+          outline: none;
+          border: 1px solid #c6c6c6;
+          border-right: none;
+        }
+
+        .send-icon {
+          background: #fff;
+          border: 1px solid #c6c6c6;
+          border-left: none;
+          width: 15%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          img {
+            width: 50px;
+            height: 50px;
+            padding-left: 7px;
+            padding-top: 4px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  .loader {
+    right: 50%;
+    top: 50%;
+    position: absolute;
+  }
+}

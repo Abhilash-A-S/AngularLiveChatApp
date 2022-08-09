@@ -1,0 +1,9 @@
+<div class="full-size friends-Container">
+    <div class="listing-section">
+        <div class="user-section" [ngClass]="{'active-friend': getActiveFriendId() == friend.uid}"
+            *ngFor="let friend of friendList; let i = index" (click)="activateChat(friend)">
+            <div class="icon-section"><img [src]="friend.imageUrl" alt=""></div>
+            <div class="name-container">{{friend.userName}}</div>
+        </div>
+    </div>
+</div>

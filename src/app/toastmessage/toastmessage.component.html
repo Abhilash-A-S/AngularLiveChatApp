@@ -1,0 +1,4 @@
+<div class="message-section" [ngStyle]="style" *ngIf="showToasterMessage">
+    <span class="message">{{message}}</span>
+    <span class="close" (click)="showToasterMessage = false">&#10006;</span>
+</div>

@@ -1,0 +1,27 @@
+<div class="full-size user-Container">
+    <div class="listing-header">
+        <div class="search-box">
+            <input type="text" placeholder="Search..." [(ngModel)]="searchText">
+        </div>
+    </div>
+    <div class="listing-section">
+        <div class="user-section" *ngFor="let user of filteredUserList(); let i = index"
+            (click)="addToFriendList(user)">
+            <div class="icon-section"><img [src]="user.imageUrl" alt=""></div>
+            <div class="name-container"><span class="name-section">{{user.userName}}</span>
+                <span class="description">Created on {{formatDate(user.createdDate)}}</span>
+                <span class="created-time"></span>
+                <div class="tick-mark" *ngIf="IsFriendCheck(user)">&#x2714;</div>
+            </div>
+        </div>
+        <div *ngIf="!userList.length && !showLoader" class="center-align record-empty">
+            No Online Users
+        </div>
+        <div *ngIf="!filteredUserList().length && userList.length" class="center-align record-empty">
+            Search text not macthing to the user name
+        </div>
+        <div class="loader center-align full-height" *ngIf="showLoader">
+            <app-loader></app-loader>
+        </div>
+    </div>
+</div>

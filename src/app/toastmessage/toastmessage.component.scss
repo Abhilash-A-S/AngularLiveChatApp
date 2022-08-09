@@ -1,0 +1,13 @@
+.message-section {
+  position: absolute;
+  top: -1px;
+  width: 479px;
+  padding: 13px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .close{
+    color: #000;
+    cursor: pointer;
+  }
+}

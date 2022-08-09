@@ -1,0 +1,132 @@
+  .form-row {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0 15px 0;
+  }
+
+  .form-input {
+    padding: 10px;
+  }
+
+  .btn-custom {
+    width: 140px;
+    height: 45px;
+    background-color: #204060;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+
+  .btn-custom:hover {
+    background-color: #555555;
+    color: white;
+  }
+
+  .kx-terms-conditions {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  // }
+
+  /**
+ * Variables
+ */
+  $button-bg: #0D52E9;
+  $speed: 0.6s;
+  $delay: ($speed * .5);
+  $easing: cubic-bezier(.55, 0, .1, 1);
+
+
+  /**
+  * Overlay
+  * -- only show for tablet and up
+  */
+  @media only screen and (min-width: 40em) {
+
+    .modal-overlay {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 5;
+      background-color: rgba(#000, 0.6);
+      opacity: 0;
+      visibility: hidden;
+      backface-visibility: hidden;
+      transition: opacity $speed $easing, visibility $speed $easing;
+
+      &.active {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  /**
+  * Modal
+  */
+  .modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 0 auto;
+    background-color: #fff;
+    width: 600px;
+    max-width: 75rem;
+    min-height: 20rem;
+    padding: 1rem;
+    border-radius: 3px;
+    opacity: 0;
+    overflow-y: auto;
+    visibility: hidden;
+    box-shadow: 0 2px 10px rgba(#000, 0.1);
+    backface-visibility: hidden;
+    transform: scale(1.2);
+    transition: all $speed $easing;
+
+    .modal-content {
+      opacity: 0;
+      backface-visibility: hidden;
+      transition: opacity $speed $easing;
+      transition-delay: $delay;
+    }
+
+    // content
+
+    &.active {
+      visibility: visible;
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+
+
+  /**
+  * Mobile styling
+  */
+  @media only screen and (max-width: 39.9375em) {
+
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-overflow-scrolling: touch;
+      border-radius: 0;
+      transform: scale(1.1);
+      padding: 0 !important;
+    }
+  }

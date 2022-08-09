@@ -1,0 +1,58 @@
+.friends-Container {
+  .listing-section {
+    display: flex;
+    height: 100%;
+    overflow-x: overlay;
+  }
+
+  .user-section {
+    width: 90px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 10px;
+    cursor: pointer;
+
+    .icon-section {
+      width: 60px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    img {
+      width: 60px;
+      height: 60px;
+    }
+
+    .name-container {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 70px;
+      font-size: 14px;
+    }
+  }
+
+  .user-section:hover {
+    box-shadow: 0 0 11px rgba(33, 33, 33, .2);
+  }
+
+  input {
+    width: 90%;
+    height: 30px;
+    padding: 5px 17px;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    margin-left: 6px;
+  }
+}
+
+// scroll height
+::-webkit-scrollbar {
+  height: 5px;
+}
+
+.active-friend {
+  background-color: #E6E6FA;
+}
